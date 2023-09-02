@@ -27,3 +27,17 @@ For this task, your objective is to create a user interface that facilitates the
 - Keep in mind that the primary focus of this challenge is to showcase your ability to manage feature-specific branches, commit changes within those branches, and integrate those features back into the 'main' branch with informative commit messages.
 
 For the backend component, kindly employ the docker image and files from 'question1'.
+
+## Solution and Answer
+
+### Added working development branch
+
+I added branches to easier for next developer to pick up the bugs and fix the problem by separating main, deveopment, and feature branch
+
+### Added Login
+
+Added working login UI
+
+### Added Login API
+
+Added working Login API to connect to question1 database
