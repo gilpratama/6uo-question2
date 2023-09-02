@@ -42,3 +42,7 @@ Added working login UI
 ### Added Login API
 
 Added working Login API to connect to question1 database
+
+# How to Run
+
+run `cd tech-blog` and `npm start` on the parent folder
