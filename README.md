@@ -1,5 +1,6 @@
+Solution and answer available on the bottom
 
-Git Collaboration Challenge
+# Git Collaboration Challenge
 
 Background:
 
