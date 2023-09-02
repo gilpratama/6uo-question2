@@ -1,9 +1,10 @@
-// LoginForm.js
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -13,14 +14,27 @@ function LoginForm() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // You can add your login logic here.
-    // Typically, you'd make an API call to authenticate the user.
+    try {
+      const response = await axios.post('/api/login', {
+        email,
+        password,
+      });
 
-    // For demonstration purposes, we'll just display the email and password for now.
-    alert(`Email: ${email}, Password: ${password}`);
+      if (response.status === 200) {
+        // Login successful, you can store the session token in localStorage or a state variable
+        alert('Login successful');
+      }
+    } catch (err) {
+      if (err.response && err.response.status === 401) {
+        setError('Email or password is incorrect.');
+      } else {
+        setError('An error occurred. Please try again later.');
+        console.log("unable to connect to database")
+      }
+    }
   };
 
   return (
@@ -45,6 +59,7 @@ function LoginForm() {
           required
         />
       </div>
+      {error && <div className="error-message">{error}</div>}
       <div>
         <button type="submit">Login</button>
       </div>
