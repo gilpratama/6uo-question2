@@ -31,8 +31,8 @@ function LoginForm() {
       if (err.response && err.response.status === 401) {
         setError('Email or password is incorrect.');
       } else {
-        setError('An error occurred. Please try again later.');
-        console.log("unable to connect to database")
+        setError('Unable to login. Please try again later.');
+        console.error(err); // Log the error for debugging
       }
     }
   };
